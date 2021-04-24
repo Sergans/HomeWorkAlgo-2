@@ -2,8 +2,28 @@
 
 namespace Task_2
 {
+    public class TestCase
+    {
+        public int[] array= {1,2,3 };
+        public int searchvalue;
+        
+    }
     class Program
     {
+        public static void TestSearch(TestCase testCase)
+        {
+            if (BinarySearch(testCase.array,testCase.searchvalue) == testCase.searchvalue)
+            {
+                Console.WriteLine("VALID TEST");
+
+            }
+            else
+            {
+                Console.WriteLine("INVALID TEST");
+            }
+
+        }
+
         public static int FindIndexByValue(int[] array, int value) //поиск элемента с определённым значением
         {
             for (int i = 0; i < array.Length; i++)
@@ -29,7 +49,7 @@ namespace Task_2
                 if (value == inputArray[mid])
                 {
                     Console.WriteLine($"Найдено значение {value}");
-                    return value;
+                    return inputArray[mid];
                 }
                 else if (value < inputArray[mid])
                 {
@@ -45,9 +65,13 @@ namespace Task_2
         }
             static void Main(string[] args)
         {
+            TestCase testCase1 = new TestCase() {searchvalue = 3 };
+            TestSearch(testCase1);
+
             int[] a = { 1, 2, 3,4,5 };
 
-              BinarySearch(a, 2);
+
+              BinarySearch(a, 6);
         }
     }
 }
