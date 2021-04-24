@@ -4,6 +4,21 @@ namespace Task_2
 {
     class Program
     {
+        public static string FindIndexByValue(int[] array, int value) //поиск элемента с определённым значением
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == value)
+                {
+                    
+                    return ($"Найдено значение {value}");
+                }
+                
+            }
+
+            return ($"Значение {value} не найдено!");
+        }
+
         public static int BinarySearch(int[] inputArray, int searchValue)
         {
             int min = 0;
@@ -28,8 +43,9 @@ namespace Task_2
         }
             static void Main(string[] args)
         {
-            int[] a = { 1, 2, 3,4 };
-           Console.WriteLine( BinarySearch(a, 2));
+            int[] a = { 1, 2, 3,4,5 };
+
+          Console.WriteLine( FindIndexByValue(a, 3));
         }
     }
 }
