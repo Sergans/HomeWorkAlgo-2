@@ -4,22 +4,22 @@ namespace Task_2
 {
     class Program
     {
-        public static string FindIndexByValue(int[] array, int value) //поиск элемента с определённым значением
+        public static int FindIndexByValue(int[] array, int value) //поиск элемента с определённым значением
         {
             for (int i = 0; i < array.Length; i++)
             {
                 if (array[i] == value)
                 {
                     
-                    return ($"Найдено значение {value}");
+                    return array[i];
                 }
                 
             }
 
-            return ($"Значение {value} не найдено!");
+            return -1;
         }
 
-        public static string BinarySearch(int[] inputArray, int value)
+        public static int BinarySearch(int[] inputArray, int value)
         {
             int min = 0;
             int max = inputArray.Length - 1;
@@ -28,7 +28,8 @@ namespace Task_2
                 int mid = (min + max) / 2;
                 if (value == inputArray[mid])
                 {
-                    return ($"Найдено значение {value}");
+                    Console.WriteLine($"Найдено значение {value}");
+                    return value;
                 }
                 else if (value < inputArray[mid])
                 {
@@ -39,13 +40,14 @@ namespace Task_2
                     min = mid + 1;
                 }
             }
-            return ($"Значение {value} не найдено!");
+            Console.WriteLine($"Значение {value} не найдено!");
+            return value;
         }
             static void Main(string[] args)
         {
             int[] a = { 1, 2, 3,4,5 };
 
-          Console.WriteLine( BinarySearch(a, 6));
+              BinarySearch(a, 2);
         }
     }
 }
