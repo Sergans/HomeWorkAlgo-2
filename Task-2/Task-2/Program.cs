@@ -19,18 +19,18 @@ namespace Task_2
             return ($"Значение {value} не найдено!");
         }
 
-        public static int BinarySearch(int[] inputArray, int searchValue)
+        public static string BinarySearch(int[] inputArray, int value)
         {
             int min = 0;
             int max = inputArray.Length - 1;
             while (min <= max)
             {
                 int mid = (min + max) / 2;
-                if (searchValue == inputArray[mid])
+                if (value == inputArray[mid])
                 {
-                    return mid;
+                    return ($"Найдено значение {value}");
                 }
-                else if (searchValue < inputArray[mid])
+                else if (value < inputArray[mid])
                 {
                     max = mid - 1;
                 }
@@ -39,13 +39,13 @@ namespace Task_2
                     min = mid + 1;
                 }
             }
-            return -1;
+            return ($"Значение {value} не найдено!");
         }
             static void Main(string[] args)
         {
             int[] a = { 1, 2, 3,4,5 };
 
-          Console.WriteLine( FindIndexByValue(a, 3));
+          Console.WriteLine( BinarySearch(a, 6));
         }
     }
 }
