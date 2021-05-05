@@ -59,7 +59,18 @@ namespace Task_1
             {
                 Console.WriteLine(a.Value);
             }
-
+            Console.WriteLine();
+            list.RemoveNode(5);
+            foreach (Node a in list.ArrNode())
+            {
+                Console.WriteLine(a.Value);
+            }
+            list.RemoveNode(list.first.NextItem);
+            Console.WriteLine();
+            foreach (Node a in list.ArrNode())
+            {
+                Console.WriteLine(a.Value);
+            }
         }
     }
 }
