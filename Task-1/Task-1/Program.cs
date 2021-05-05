@@ -2,12 +2,7 @@
 
 namespace Task_1
 {
-    public class Node
-    {
-        public int Value { get; set; }
-        public Node NextNode { get; set; }
-        public Node PrevNode { get; set; }
-    }
+    
     //Начальную и конечную ноду нужно хранить в самой реализации интерфейса
     public interface ILinkedList
     {
@@ -23,7 +18,24 @@ namespace Task_1
     {
         static void Main(string[] args)
         {
+            LinkedList list = new LinkedList();
+            list.AddNode(1);
+            list.AddNode(2);
+            list.AddNode(3);
+            list.AddNode(4);
             
+            foreach(Node a in list.ArrNode())
+            {
+                Console.WriteLine(a.Value);
+            }
+            list.RemoveNode(2);
+            foreach (Node a in list.ArrNode())
+            {
+                Console.WriteLine(a.Value);
+            }
+
+           
+
         }
     }
 }
