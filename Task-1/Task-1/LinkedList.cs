@@ -154,7 +154,7 @@ namespace Task_1
             }
             //return false;
         }
-        public Node[] ArrNode()
+        public Node[] ArrNode()//создает массив нод
         {
             
             Node[] arrNod = new Node[GetCount()];
@@ -175,7 +175,7 @@ namespace Task_1
                 }
             }
             return arrNod;
-        }//создает массив нод
+        }
             
         
     }
