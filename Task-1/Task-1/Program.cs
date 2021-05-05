@@ -28,13 +28,37 @@ namespace Task_1
             {
                 Console.WriteLine(a.Value);
             }
-            list.RemoveNode(2);
+            Console.WriteLine();
+            list.RemoveNode(0);
             foreach (Node a in list.ArrNode())
             {
                 Console.WriteLine(a.Value);
             }
-
-           
+            Console.WriteLine();
+            list.AddNodeAfter(list.last, 9);
+            
+            foreach (Node a in list.ArrNode())
+            {
+                Console.WriteLine(a.Value);
+            }
+            Console.WriteLine();
+            list.AddNodeAfter(list.last, 10);
+            foreach (Node a in list.ArrNode())
+            {
+                Console.WriteLine(a.Value);
+            }
+            Console.WriteLine();
+            list.AddNodeAfter(list.first, 11);
+            foreach (Node a in list.ArrNode())
+            {
+                Console.WriteLine(a.Value);
+            }
+            Console.WriteLine();
+            list.AddNodeAfter(list.first.NextItem.NextItem, 12);
+            foreach (Node a in list.ArrNode())
+            {
+                Console.WriteLine(a.Value);
+            }
 
         }
     }

@@ -32,7 +32,28 @@ namespace Task_1
 
         public void AddNodeAfter(Node node, int value)
         {
-            throw new NotImplementedException();
+            Node a = node;
+            Node newnode = new Node { Value = value };
+            if (a.NextItem == null)
+            {
+                newnode.PrevItem = last;
+                last.NextItem = newnode;
+                last = newnode;
+            }
+            else if (a.NextItem != null && a.PrevItem == null)
+            {
+                newnode.PrevItem = first;
+                newnode.NextItem = first.NextItem;
+                first.NextItem = newnode;
+            }
+            else
+            {
+                newnode.PrevItem = a;
+                newnode.NextItem = a.NextItem;
+                a.NextItem = newnode;
+
+            }
+
         }
         //реал
         public Node FindNode(int searchValue)
