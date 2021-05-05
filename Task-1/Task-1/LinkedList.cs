@@ -30,7 +30,7 @@ namespace Task_1
           
         }
 
-        public void AddNodeAfter(Node node, int value)
+        public void AddNodeAfter(Node node, int value)//реал
         {
             Node a = node;
             Node newnode = new Node { Value = value };
