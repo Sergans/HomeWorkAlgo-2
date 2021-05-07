@@ -40,12 +40,9 @@ namespace Task_1
         {
             //int[] a =;
             TestCase testCase = new TestCase();
-           
-            testCase.mas[0] = 1;
-            testCase.mas[1] = 2;
-            testCase.mas[2] = 3;
-            testCase.mas[3] = 4;
-            testCase.mas[4] = 5;
+            testCase.mas = new int[] { 1, 2, 3,4,5 };
+            TestNode(testCase);
+            
             //LinkedList list = new LinkedList();
             //list.AddNode(1);
             //list.AddNode(2);
