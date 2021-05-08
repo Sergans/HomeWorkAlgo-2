@@ -7,6 +7,10 @@ namespace Task_1
         public int[] mas { get; set; }
         public int testcount { get; set; }
         public int testsv { get; set; }
+      
+        public int testRMIndex { get; set; }
+        public int testafter { get; set; }
+        public int testAA { get; set; }
     }
     
     //Начальную и конечную ноду нужно хранить в самой реализации интерфейса
@@ -30,10 +34,35 @@ namespace Task_1
                 list.AddNode(testCase.mas[i]);
 
             }
-            if (testCase.mas.Length == list.GetCount())
+            if (testCase.mas.Length == list.GetCount()&&testCase.testcount== list.GetCount())
             {
                 Console.WriteLine("VALID TEST");
             }
+            else
+            {
+                Console.WriteLine("INVALID TEST");
+            }
+            if (testCase.mas[testCase.testsv-1] == list.FindNode(testCase.testsv).Value)
+            {
+                Console.WriteLine("VALID TEST");
+            }
+            else
+            {
+                Console.WriteLine("INVALID TEST");
+            }
+            list.RemoveNode(testCase.testRMIndex);
+            
+
+            list.AddNodeAfter(list.FindNode(testCase.testafter), testCase.testAA);
+            if (testCase.testcount == list.GetCount() && testCase.testAA == list.FindNode(testCase.testAA).Value)
+            {
+                Console.WriteLine("VALID TEST");
+            }
+            else
+            {
+                Console.WriteLine("INVALID TEST");
+            }
+
 
         }
         static void Main(string[] args)
@@ -41,61 +70,15 @@ namespace Task_1
             //int[] a =;
             TestCase testCase = new TestCase();
             testCase.mas = new int[] { 1, 2, 3,4,5 };
+            testCase.testcount = 5;
+            testCase.testsv = 3;
+            testCase.testafter = 2;
+            testCase.testRMIndex = 3;
+            testCase.testAA = 6;
+            
             TestNode(testCase);
             
-            //LinkedList list = new LinkedList();
-            //list.AddNode(1);
-            //list.AddNode(2);
-            //list.AddNode(3);
-            //list.AddNode(4);
-
-            //foreach(Node a in list.ArrNode())
-            //{
-            //    Console.WriteLine(a.Value);
-            //}
-            //Console.WriteLine();
-            //list.RemoveNode(0);
-            //foreach (Node a in list.ArrNode())
-            //{
-            //    Console.WriteLine(a.Value);
-            //}
-            //Console.WriteLine();
-            //list.AddNodeAfter(list.last, 9);
-
-            //foreach (Node a in list.ArrNode())
-            //{
-            //    Console.WriteLine(a.Value);
-            //}
-            //Console.WriteLine();
-            //list.AddNodeAfter(list.last, 10);
-            //foreach (Node a in list.ArrNode())
-            //{
-            //    Console.WriteLine(a.Value);
-            //}
-            //Console.WriteLine();
-            //list.AddNodeAfter(list.first, 11);
-            //foreach (Node a in list.ArrNode())
-            //{
-            //    Console.WriteLine(a.Value);
-            //}
-            //Console.WriteLine();
-            //list.AddNodeAfter(list.first.NextItem.NextItem, 12);
-            //foreach (Node a in list.ArrNode())
-            //{
-            //    Console.WriteLine(a.Value);
-            //}
-            //Console.WriteLine();
-            //list.RemoveNode(5);
-            //foreach (Node a in list.ArrNode())
-            //{
-            //    Console.WriteLine(a.Value);
-            //}
-            //list.RemoveNode(list.first.NextItem);
-            //Console.WriteLine();
-            //foreach (Node a in list.ArrNode())
-            //{
-            //    Console.WriteLine(a.Value);
-            //}
+           
         }
     }
 }

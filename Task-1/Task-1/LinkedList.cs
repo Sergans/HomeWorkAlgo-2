@@ -63,7 +63,7 @@ namespace Task_1
             {
                 if (search.Value == searchValue)
                 {
-                    Console.WriteLine("Найдено"+search.Value);
+                    //Console.WriteLine("Найдено"+search.Value);
                     return search;
                 }
                 search = search.NextItem;
