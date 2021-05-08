@@ -72,6 +72,7 @@ namespace Task_2
 
 
               BinarySearch(a, 6);
+            //Log2(n)
         }
     }
 }
