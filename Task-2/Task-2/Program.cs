@@ -26,7 +26,7 @@ namespace Task_2
 
         public static int FindIndexByValue(int[] array, int value) //поиск элемента с определённым значением
         {
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)//O(N)
             {
                 if (array[i] == value)
                 {
@@ -45,8 +45,8 @@ namespace Task_2
             int max = inputArray.Length - 1;
             while (min <= max)
             {
-                int mid = (min + max) / 2;
-                if (value == inputArray[mid])
+                int mid = (min + max) / 2;//O(1)
+                if (value == inputArray[mid])//O(1)
                 {
                     Console.WriteLine($"Найдено значение {value}");
                     return inputArray[mid];
@@ -72,7 +72,7 @@ namespace Task_2
 
 
               BinarySearch(a, 6);
-            //Log2(n)
+            //O(N/2)
         }
     }
 }
