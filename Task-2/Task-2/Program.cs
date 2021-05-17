@@ -43,10 +43,10 @@ namespace Task_2
         {
             int min = 0;
             int max = inputArray.Length - 1;
-            while (min <= max)
+            while (min <= max)//x-итераций
             {
-                int mid = (min + max) / 2;//O(1)
-                if (value == inputArray[mid])//O(1)
+                int mid = (min + max) / 2;
+                if (value == inputArray[mid])
                 {
                     Console.WriteLine($"Найдено значение {value}");
                     return inputArray[mid];
@@ -72,7 +72,11 @@ namespace Task_2
 
 
               BinarySearch(a, 6);
-            //O(N/2)
+            //O(N/2)^x
+            //1=N/2^x на последней итерации
+            //2^x=1*N
+            //2^x=N
+            //Log2(N)
         }
     }
 }
